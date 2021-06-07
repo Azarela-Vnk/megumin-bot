@@ -78,7 +78,6 @@ const premiumNumber = JSON.parse(fs.readFileSync('./database/user/premium.json')
 const botName = 'MEGUMIN'
 const ownerName = 'MEGUMIN'
     /*
-    ]=====> SC BY ITSMAZGH <=====[
     */
     /*       
     ]=====> LOAD JSON <=====[
