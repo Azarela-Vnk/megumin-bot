@@ -78,6 +78,8 @@ const premiumNumber = JSON.parse(fs.readFileSync('./database/user/premium.json')
 const botName = 'MEGUMIN'
 const ownerName = 'MEGUMIN'
     /*
+    ]=====> SC BY ITSMAZGH <=====[
+    */
     /*       
     ]=====> LOAD JSON <=====[
     */
@@ -1411,6 +1413,34 @@ anu = await fetchJson(`https://rest-api-megumin1.herokuapp.com/api/nulis?text=${
 buffer = await getBuffer(anu.result.result)
 mans.sendMessage(from, buffer, image, { quoted: mek, caption: 'success oni chan'})
 break
+case 'covidindo':
+       anu = await fetchJson(`https://rest-api-megumin1.herokuapp.com/api/covidindo?apikey=beta`)
+       teks = `• *Provinsi* : ${anu.result.attributes.Provinsi}\n• *Positif* : ${anu.result.attributes.Kasus_Posi}\n• *Sembuh* : ${anu.result.attributes.Kasus_Semb}\n• *Meninggal* : ${anu.result.attributes.Kasus_Meni}`
+       mans.sendMessage(from, teks, text, { quoted: mek })
+       break
+       case 'cuacaindo':
+      if (args.length == 0) return reply(`Penggunaan ${prefix}cuacaindo jakarta`)
+      anu = await fetchJson(`https://rest-api-megumin1.herokuapp.com/api/infocuaca?provinsi=${args[0]}&apikey=beta`)
+      teks = `• *Title*: ${anu.result.title}\n• *Kota*: ${anu.result.daftar_kota.nama_kota}\n• *Cuaca Malam* : ${anu.result.cuaca_malam}\n• *Cuaca dini hari* : ${anu.result.cuaca_dini_hari}\n• *Suhu* : ${anu.result.suhu}`
+      reply(teks)
+      break
+      case 'cuaca1': // pikirin sendiri lah tot,cape gw ngerjain sc kontol sampe malem malem,kena marah ortu bangsat
+                if (args.length < 1) return reply(`mau nyari apaan bwang di joox?`)
+                reply(`[❕] Loading`)
+                asu = await fetchJson(`https://rest-api-megumin1.herokuapp.com/api/infocuaca?provinsi=${args[0]}&apikey=beta`)
+                teks = '=================\n'
+                lala = `${asu.result.result}`
+                for (let i of lala) {
+                teks += `• *Title*: ${i.title}\n• *Kota*: ${i.nama_kota}\n• *Cuaca Malam* : ${i.cuaca_malam}\n• *Cuaca dini hari* : ${i.cuaca_dini_hari}\n• *Suhu* : ${i.suhu}\n=================\n`
+                }
+                ikkeh_kimochi_ahhh = await getBuffer(`https://i.postimg.cc/hvHsThsH/images-17.jpg`)
+                mans.sendMessage(from, ikkeh_kimochi_ahhh, image, {quoted: mek, caption: teks})
+                break
+       case 'wallpaper':
+      anu = await fetchJson(`https://rest-api-megumin1.herokuapp.com/api/random/wallpaper?apikey=beta`)
+      buffer = await getBuffer(anu.result.url)
+      mans.sendMessage(from, buffer, image, { quoted: mek })
+      break
 case 'quotes':
 anu = await fetchJson(`https://rest-api-megumin1.herokuapp.com/api/randomquote?apikey=beta`)
 teks = `_${anu.result.quotes}_\n\n• *${anu.result.author}*`
