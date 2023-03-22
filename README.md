@@ -1,9 +1,9 @@
 
 <p align="center">
 <a href="https://github.com/Azarela-Vnk/followers"><img title="Followers" src="https://img.shields.io/github/followers/Azarela-Vnk?color=blue&style=flat-square"></a>
-<a href="https://github.com/Azarela-Vnk/Bot-WhatsappV1/stargazers/"><img title="Stars" src="https://img.shields.io/github/stars/Azarela-Vnk/Bot-WhatsappV1?color=red&style=flat-square"></a>
-<a href="https://github.com/Azarela-Vnk/Bot-WhatsappV1/network/members"><img title="Forks" src="http://img.shields.io/github/forks/affisjunianto/botwasapv6?color=red&style=flat-square"></a>
-<a href="https://github.com/Azarela-Vnk/Bot-WhatsappV1/watchers"><img title="Watching" src="https://img.shields.io/github/watchers/affisjunianto/botwasapv6?label=Watchers&color=blue&style=flat-square"></a>
+<a href="https://github.com/Azarela-Vnk/megumin-bot/stargazers/"><img title="Stars" src="https://img.shields.io/github/stars/Azarela-Vnk/megumin-bot?color=red&style=flat-square"></a>
+<a href="https://github.com/Azarela-Vnk/megumin-bot/network/members"><img title="Forks" src="http://img.shields.io/github/forks/affisjunianto/botwasapv6?color=red&style=flat-square"></a>
+<a href="https://github.com/Azarela-Vnk/megumin-bot/watchers"><img title="Watching" src="https://img.shields.io/github/watchers/affisjunianto/botwasapv6?label=Watchers&color=blue&style=flat-square"></a>
 <a href="https://hits.seeyoufarm.com"><img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Faffisjunianto%2Fbotwasapv6&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=Support&edge_flat=false"/></a>
 <a href="#"><img title="MAINTENED" src="https://img.shields.io/badge/MAINTENED-YES-blue.svg"</a>
 </p>
@@ -11,7 +11,7 @@
 ## Clone this project
 
 ```bash
-> git clone https://github.com/Azarela-Vnk/Bot-WhatsappV1
+> git clone https://github.com/Azarela-Vnk/megumin-bot
 ```
 
 ## Install the dependencies:
@@ -19,7 +19,7 @@ Before running the below command, make sure you're in the project directory that
 you've just cloned!!
 
 ```bash
-> cd Bot-WhatsappV1
+> cd megumin-bot
 > bash install.sh
 ```
 
@@ -31,7 +31,7 @@ you've just cloned!!
 ### Setting
 Change admin and all in folder
 
-[`HERE`](https://github.com/Azarela-Vnk/Bot-WhatsappV1/blob/main/admin/set.json)
+[`HERE`](https://github.com/Azarela-Vnk/megumin-bot/blob/main/admin/set.json)
 
 
 ## Features
