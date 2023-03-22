@@ -299,7 +299,7 @@ const mans = new WAConnection()
 mans.logger.level = 'warn'
 console.log(banner.string)
 mans.on('qr', () => {
-    console.log(color('[', 'white'), color('!', 'red'), color(']', 'white'), color(' POWERED BY ITSMAZGH'))
+    console.log(color('[', 'white'), color('!', 'red'), color(']', 'white'), color(' POWERED BY R4id3n'))
 })
 mans.on('credentials-updated', () => {
     fs.writeFileSync('./session.json', JSON.stringify(mans.base64EncodedAuthInfo(), null, '\t'))
@@ -1207,8 +1207,11 @@ menu = `❏  ${ucapanWaktu}
 ├  ${prefix}toimg *reply sticker*
 └  ${prefix}sticker *reply foto/video*
 
-❏  I S L A M - M E N U
-└  ${prefix}kisahnabi *nama nabi*
+❏  B A S I C - M E N U
+├  ${prefix} *tiktokstalk* > *Example ${prefix}tiktokstalk Jokowi*
+├  ${prefix} *simi* 
+├  ${prefix} *tts* 
+├  ${prefix} *rate* 
 
 ❏  A B O U T - B O T
 ├  ${prefix}owner
@@ -1237,128 +1240,52 @@ mans.sendMessage(from, { text: menu, jpegThumbnail: fs.readFileSync('./image/anj
                 reply(pingnya)
                 })
                 break
-                case 'ytmp4':
-                reply(`wait loading`)
-                if (args.length == 0) return reply(`example: ${prefix}ytmp4 https://youtu.be/wHBLtzJvtco`)
-                memeka = args[0]
-                anu = await fetchJson(`https://rest-api-megumin1.herokuapp.com/api/yutub/audio?url=${memeka}&apikey=beta`)
-                teks = `title: ${anu.result.title}\nSize: ${anu.result.filesize}\n\n[!]lagi di proses kak`
-                thumb = await getBuffer(anu.result.thumb)
-                mans.sendMessage(from, thumb, image, {quoted: mek, caption: teks})
-                buffer = await getBuffer(anu.result.result)
-                mans.sendMessage(from, buffer, video, {Mimetype: 'video/mp4', filename: `${anu.result.result}.mp4`, quoted: mek, caption: 'nih kak'})
-                break
-                case 'ytmp41':
-                reply(`wait loading`)
-                if (args.length == 0) return reply(`Example: ${prefix + command} https://www.youtube.com/watch?v=qZIQAk-BUEc`)
-                ini_link = args[0]
-                get_result = await fetchJson(`https://rest-api-megumin1.herokuapp.com/api/yutub/audio?url=${ini_url}&apikey=beta`)
-                get_result = get_result.result
-                ini_txt = `Title : ${get_result.title}\n`
-                ini_txt += `size: ${get_result.filesize}\n`
-                ini_txt += `resolution: ${get_result.resolution}\n`
-                ini_txt += `jenis file: ${get_result.ext}`
-                ini_buffer = await getBuffer(get_result.thumb)
-                mans.sendMessage(from, ini_buffer, image, { quoted: mek, caption: ini_txt })
-                get_audio = await getBuffer(get_result.result[0])
-                mans.sendMessage(from, get_audio, video, { mimetype: 'video/mp4', filename: `${get_result.title}.mp4`, quoted: mek, caption: 'Donasi asu!'})
-                break
-                case 'ytmp3':
-                reply(`wait loading`)
-                if (args.length == 0) return reply(`example: ${prefix}ytmp3 https://youtu.be/wHBLtzJvtco`)
-                memek = args[0]
-                anu = await fetchJson(`https://rest-api-megumin1.herokuapp.com/api/yutub/video?url=${memek}&apikey=beta`)
-                if (anu.error) return reply(anu.error)
-                teks = `title: ${anu.result.title}\nSize: ${anu.result.filesize}\n\n[!]lagi di proses kak`
-                thumb = await getBuffer(anu.result.thumb)
-                mans.sendMessage(from, thumb, image, {quoted: mek, caption: teks})
-                buffer = await getBuffer(anu.result.result)
-                mans.sendMessage(from, buffer, audio, {Mimetype: 'audio/mp3', filename: `${anu.result.result}.mp3`, quoted: mek, caption: 'nih kak'})
-                break
-                case 'igstalk':
-                reply(`wait loading`)
-                qury = args[0]
-                anu  = await fetchJson(`https://rest-api-megumin1.herokuapp.com/api/ig/stalk?username=${body.slice(9)}&apikey=Alphabot`)
-                images = await getBuffer(anu.result.Profile_pic)
-                teks = `name: ${anu.result.Name}\nusername: ${anu.result.Username}\nbiodata: ${anu.result.Biodata}\njumlah followers: ${anu.result.Jumlah_Followers}\njumlah following: ${anu.result.Jumlah_Following}\njumlah post ${anu.result.Jumlah_Post}`
-                mans.sendMessage(from, images, image, {quoted: mek, caption: teks})
-                break
-                case 'ytsearch':
-                reply(`wait loading`)
-                if (args.length < 1) return reply(`username nya mana um?`)
-                anu  = await fetchJson(`https://rest-api-megumin1.herokuapp.com/api/yutub/search?video=${body.slice('10')}&apikey=Alphabot`)
-                buffer = await getBuffer(anu.result.thumbnail)
-                teks = `==================\n`
-                for (let i of anu.result) {
-                teks += `•> Title : ${i.title}\n•> Id : https://youtu.be/${i.id}\n•> Views : ${i.viewCount}\n=================\n`
-                }
-                reply(teks.trim())
-                break
-                case 'carifilm':
-                reply(`wait loading`)
-                if (args.length < 1) return reply(`username nya mana um?`)
-                i = await fetchJson(`https://rest-api-megumin1.herokuapp.com/api/filmapik/search?film=${body.slice(10)}&apikey=beta`)
-teks = `==================\n`
-teks += `•> Title : ${i.title}\n•> Id : ${i.result.moveId}\n•> Views : ${i.result.views}\n•>genre: ${i.result.genre}\n•> director: ${i.result.director}\n•> actors: ${i.result.actors}\n•> country: ${i.result.country}\n•> durasi: ${i.result.duration}\n•> realis: ${i.result.release}\ndesc: ${i.result.description}\n=================\n`
-reply(teks.trim())
-break
-case 'carifilm1':
-reply(`wait loading`)
-if (args.length < 1) return reply(`mau nyari anime apa um?`)
-query = args.join(" ")
-i = await fetchJson(`https://rest-api-megumin1.herokuapp.com/api/filmapik/search?film=${query}&apikey=beta`)
-memeklah = `•> Title : ${i.result.title}\n•> Id : ${i.result.moveId}\n•> Views : ${i.result.views}\n•>genre: ${i.result.genre}\n•> director: ${i.result.director}\n•> actors: ${i.result.actors}\n•> country: ${i.result.country}\n•> durasi: ${i.result.duration}\n•> realis: ${i.result.release}\ndesc: ${i.result.description}\n=================\n`
-buffer = await getBuffer(`https://i.postimg.cc/hvHsThsH/images-17.jpg`)
-mans.sendMessage(from, buffer, image, {quoted: mek, caption: memeklah})
-break
-case 'playfilm':
-reply(`wait loading`)
-if (args.length < 1) return reply(`mau nyari film apa um?pake id ya,contoh idnya 142455`)
-anu = await fetchJson(`https://rest-api-megumin1.herokuapp.com/api/filmapik/play?id=${body.slice(10)}&apikey=beta`)
-mans_tolol = `${anu.result.link}`
-mans.sendMessage(from, mans_tolol, text, {quoted: mek})
-break
-case 'infofilm': // Update NEW FITUR 
-reply(`wait loading`)
-                if (args.length < 1) return reply(`mau nyari apaan bwang di joox?`)
-                reply(`[❕] Loading`)
-                asu = await fetchJson(`https://rest-api-megumin1.herokuapp.com/api/filmapik/search?film=${body.slice(10)}&apikey=beta`)
-                teks = '=================\n'
-                resa = asu.result.result
-                for (let i of resa) {
-                    teks += `*Title* : ${i.title}\n*Rating* : ${i.rating}\n*Episode* : ${i.episode}\n*Movie ID* : ${i.movieId}\n*Views* : ${i.views}\n*Duration* : ${i.duration}\n*Release* : ${i.release}\n=================\n`
-                }
-                reply(teks)
-                break
-case 'kusonime':
-reply(`wait loading`)
-if (args.length < 1) return reply(`mau nyari anime apa um?`)
-query = args.join(" ")
-anu = await fetchJson(`https://rest-api-megumin1.herokuapp.com/api/anime/kusonime?search=${query}&apikey=beta`)
-txt = `title: ${anu.result.title}\n`
-txt += `titlejp: ${anu.result.title_jp}\n`
-txt += `genre: ${anu.result.genre}\n`
-txt += `season: ${anu.result.season}\n`
-txt += `producer: ${anu.result.producer}\n`
-txt += `type: ${anu.result.type}\n`
-txt += `status: ${anu.result.status}\n`
-txt += `total eps: ${anu.result.total_episode}\n`
-txt += `score: ${anu.result.score}\n`
-txt += `duration: ${anu.result.duration}\n`
-txt += `realis: ${anu.result.released_on}\n`
-txt += `desc: ${anu.result.description}\n`
-txt += `============`
-kontol = anu.result.download_link
-for (var i in kontol) {
-txt += `\nlink download: ${i.download_link}\nresolution${i.resolution}============`
-for (var y in kontol[i.download_link]) {
-txt += `${y.download_link} - ${kontol[x.download_link][y.download_link]}`
-}
-}
-buffer = await getBuffer(anu.result.thumbs)
-mans.sendMessage(from, buffer, image, {quoted: mek, caption: txt})
-break
-case 's':
+                case 'rate':
+					rate = body.slice(1)
+					const ra =['4','9','17','28','34','48','59','62','74','83','97','100','29','94','75','82','41','39']
+					const te = ra[Math.floor(Math.random() * ra.length)]
+					mans.sendMessage(from, 'Pertanyaan : *'+rate+'*\n\nJawaban : '+ te+'%', text, { quoted: mek })
+					break
+                case 'tts':
+				if (args.length < 1) return mans.sendMessage(from, 'Diperlukan kode bahasa!!', text, {quoted: mek})
+					const gtts = require('./lib/gtts')(args[0])
+					if (args.length < 2) return mans.sendMessage(from, 'Textnya mana om', text, {quoted: mek})
+					dtt = body.slice(8)
+					ranm = getRandom('.mp3')
+					rano = getRandom('.ogg')
+					dtt.length > 600
+					? reply('Textnya kebanyakan om')
+					: gtts.save(ranm, dtt, function() {
+						exec(`ffmpeg -i ${ranm} -ar 48000 -vn -c:a libopus ${rano}`, (err) => {
+							fs.unlinkSync(ranm)
+							buffer = fs.readFileSync(rano)
+							if (err) return reply('Gagal om:(')
+							mans.sendMessage(from, buffer, audio, {quoted: mek, ptt:true})
+							fs.unlinkSync(rano)
+						})
+					})
+					await limitAdd(sender)
+				break
+                case 'simi':
+					if (args.length < 1) return reply('Textnya mana um?')
+					teks = body.slice(5)
+					anu = await simih(teks) 
+					reply(anu)
+				break 
+                case 'tiktokstalk':
+				try {
+						if (args.length < 1) return mans.sendMessage(from, '𝘂𝘀𝗲??𝗻𝗮𝗺𝗲 𝗺𝗮𝗻𝗮 ?', text, {quoted: mek})
+						let { user, stats } = await tiktod.getUserProfileInfo(args[0])
+						reply(ind.wait())
+						teks = `*ID* : ${user.id}\n*Username* : ${user.uniqueId}\n*Nickname* : ${user.nickname}\n*Followers* : ${stats.followerCount}\n*Followings* : ${stats.followingCount}\n*Posts* : ${stats.videoCount}\n*Luv* : ${stats.heart}\n`
+						buffer = await getBuffer(user.avatarLarger)
+						mans.sendMessage(from, buffer, image, {quoted: mek, caption: teks})
+					} catch (e) {
+						console.log(`Error :`, color(e,'red'))
+						reply('[ERROR] KEMUNGKINAN USERNAME TIDAK VALID')
+					}
+					await limitAdd(sender)
+                  case 's':
                   case 'stiker':
                   case 'sticker':
                   case 'stickergif':
@@ -1414,251 +1341,25 @@ case 's':
                         .save(ran)
                 }
                 break
-case 'nulis':
-reply(`wait loading`)
-if (args.length < 1) return reply(`mau tulis apa um?`)
-tulis = body.slice(6)
-anu = await fetchJson(`https://rest-api-megumin1.herokuapp.com/api/nulis?text=${tulis}&apikey=beta`)
-buffer = await getBuffer(anu.result.result)
-mans.sendMessage(from, buffer, image, { quoted: mek, caption: 'success oni chan'})
-break
-case 'covidindo':
-reply(`wait loading`)
-       anu = await fetchJson(`https://rest-api-megumin1.herokuapp.com/api/covidindo?apikey=beta`)
-       teks = `• *Provinsi* : ${anu.result.attributes.Provinsi}\n• *Positif* : ${anu.result.attributes.Kasus_Posi}\n• *Sembuh* : ${anu.result.attributes.Kasus_Semb}\n• *Meninggal* : ${anu.result.attributes.Kasus_Meni}`
-       mans.sendMessage(from, teks, text, { quoted: mek })
-       break
-       case 'cuacaindo':
-       reply(`wait loading`)
-      if (args.length == 0) return reply(`Penggunaan ${prefix}cuacaindo jakarta`)
-      anu = await fetchJson(`https://rest-api-megumin1.herokuapp.com/api/infocuaca?provinsi=${args[0]}&apikey=beta`)
-      teks = `• *Title*: ${anu.result.title}\n• *Kota*: ${anu.result.daftar_kota.nama_kota}\n• *Cuaca Malam* : ${anu.result.cuaca_malam}\n• *Cuaca dini hari* : ${anu.result.cuaca_dini_hari}\n• *Suhu* : ${anu.result.suhu}`
-      reply(teks)
-      break
-      case 'cuaca1': // pikirin sendiri lah tot,cape gw ngerjain sc kontol sampe malem malem,kena marah ortu bangsat
-                reply(`wait loading`)
-                if (args.length < 1) return reply(`mau nyari apaan bwang di joox?`)
-                reply(`[❕] Loading`)
-                asu = await fetchJson(`https://rest-api-megumin1.herokuapp.com/api/infocuaca?provinsi=${args[0]}&apikey=beta`)
-                teks = '=================\n'
-                lala = `${asu.result.result}`
-                for (let i of lala) {
-                teks += `• *Title*: ${i.title}\n• *Kota*: ${i.nama_kota}\n• *Cuaca Malam* : ${i.cuaca_malam}\n• *Cuaca dini hari* : ${i.cuaca_dini_hari}\n• *Suhu* : ${i.suhu}\n=================\n`
-                }
-                ikkeh_kimochi_ahhh = await getBuffer(`https://i.postimg.cc/hvHsThsH/images-17.jpg`)
-                mans.sendMessage(from, ikkeh_kimochi_ahhh, image, {quoted: mek, caption: teks})
-                break
-       case 'wallpaper':
-       reply(`wait loading`)
-      anu = await fetchJson(`https://rest-api-megumin1.herokuapp.com/api/random/wallpaper?apikey=beta`)
-      buffer = await getBuffer(anu.result.url)
-      mans.sendMessage(from, buffer, image, { quoted: mek })
-      break
-case 'quotes':
-reply(`wait loading`)
-anu = await fetchJson(`https://rest-api-megumin1.herokuapp.com/api/randomquote?apikey=beta`)
-teks = `_${anu.result.quotes}_\n\n• *${anu.result.author}*`
-mans.sendMessage(from, teks, text, { quoted: mek })
-break
-case 'meme':
-reply(`wait loading`)
-anu = await fetchJson(`https://rest-api-megumin1.herokuapp.com/api/random/meme?apikey=beta`)
-buffer = await getBuffer(anu.result.url)
-mans.sendMessage(from, buffer, image, { quotes: mek })
-break
-case 'battle-field':
-reply(`wait loading`)
-kontolq = body.slice(14)
-memekwlo = kontolq.split("|")[0];
-memekwlo1 = kontolq.split("|")[1];
-anu = await fetchJson(`https://rest-api-megumin1.herokuapp.com/api/textmaker/game?text=${memekwlo}&text2=${memekwlo1}&theme=battlefield&apikey=beta`)
-buffer = await getBuffer(anu.result.url)
-xaxaaa = `${anu.result.url}\n${anu.result.info}`
-mans.sendMessage(from, buffer, image, {quoted: mek, caption: xaxaaa})
-break
-case 'metal':
-reply(`wait loading`)
-anu = await fetchJson(`https://rest-api-megumin1.herokuapp.com/api/textmaker/metallic?text=${body.slice(7)}&theme=glow&apikey=beta`)
-buffer = await getBuffer(anu.result.url)
-xaxaaaa = `${anu.result.url}\n${anu.result.info}`
-mans.sendMessage(from, buffer, image, {quoted: mek, caption: xaxaaaa})
-break
-case 'coffee-cup2':
-reply(`wait loading`)
-anu = await fetchJson(`https://rest-api-megumin1.herokuapp.com/api/textmaker/senja?text=${body.slice(13)}&theme=coffee-cup2&apikey=beta`)
-buffer = await getBuffer(anu.result.url)
-xaxaaa = `${anu.result.url}\n${anu.result.info}`
-mans.sendMessage(from, buffer, image, {quoted: mek, caption: xaxaaa})
-break
-case 'bunga':
-reply(`wait loading`)
-anu = await fetchJson(`https://rest-api-megumin1.herokuapp.com/api/textmaker/alam?text=${body.slice(7)}&theme=flower&apikey=beta`)
-buffer = await getBuffer(anu.result.url)
-xaxaa = `${anu.result.url}\n${anu.result.info}`
-mans.sendMessage(from, buffer, image, {quoted: mek, caption: xaxaa})
-break
-case 'woodheart':
-reply(`wait loading`)
-anu = await fetchJson(`https://rest-api-megumin1.herokuapp.com/api/textmaker/random?text=${body.slice(11)}&theme=art-quote&apikey=Alphabot`)
-buffer = await getBuffer(anu.result.url)
-xaxa = `${anu.result.url}\n${anu.result.info}`
-mans.sendMessage(from, buffer, image, {quoted: mek, caption: xaxa})
-break
-case 'google':
-reply(`wait loading`)
-kontol = body.slice(8)
-memek3 = kontol.split("|")[0];
-memek4 = kontol.split("|")[1];
-memek5 = kontol.split("|")[2];
-anu = await fetchJson(`https://rest-api-megumin1.herokuapp.com/api/textmaker?text=${memek3}&text2=${memek4}&text3=${memek5}&theme=google-suggestion&apikey=beta`)
-buffer = await getBuffer(anu.result.url)
-buffer1 = await getBuffer(anu.result.delete_url)
-shit = `${anu.result.url}\n${anu.result.info}`
-mans.sendMessage(from, buffer, image, {quoted: mek, caption: shit})
-case 'quran':
-if (args.length == 0) return reply(`Example: ${prefix + command} surah 1 ayat 1`) 
-anu = await fetchJson(`https://saipulanuar.ga/api/muslim/quran?surah=1&ayat=2`) 
-teks = `Nama surat : ${anu.result.long}\nTransliteration : ${anu.result.transliteration.en}\nJuz : ${anu.result.juz}\nPage : ${anu.result.page}\n----------\nTeks : ${anu.result.text.arab}\n----------\nTranslation : ${anu.result.text.transliteration.en}\n----------\ntafsir : ${anu.result.tafsir.id.short}`
-mans.sendMessage(from, teks, text, {quoted:mek }) 
-buffer = await getBuffer(anu.result.result)
-Test = `Audio : ${anu.result.audio.secondary}`
-mans.sendMessage(from, buffer, audio, {Mimetype: 'audio/mp3', filename: `${anu.result.audio.secondary}.mp3`, quoted: mek, caption: 'Test'})
-break
-case 'kisahnabi':
-reply(`wait loading`)
-if (args.length == 0) return reply(`Example: ${prefix + command} Muhammad`)
-anu = await fetchJson(`https://rest-api-megumin1.herokuapp.com/api/kisahnabi?nabi=${body.slice(11)}&apikey=beta`)
-teks = `Nama : ${anu.result.nabi.nabi}\nLahir : ${anu.result.nabi.lahir}\nUmur : ${anu.result.nabi.umur}\nTempat : ${anu.result.nabi.tempat}\nKisah : ${anu.result.nabi.kisah}`
-mans.sendMessage(from, teks, text, {quoted: mek})
-break
-case 'manga': // Update NEW FITUR 
-reply(`wait loading`)
-                if (args.length < 1) return reply('nama anime nya apaang bwang?')
-                reply('[❕]loading')
-                anu = await fetchJson(`https://rest-api-megumin1.herokuapp.com/api/manga?search=${body.slice(9)}&apikey=beta`)
-                buffer = await getBuffer(anu.result.thumb)
-                hasil = `*note:* ${anu.result.note}\n*Title:* : ${anu.result.title}\n*Genre* : ${anu.result.genre}\n*Type* : ${anu.result.type}\n*Rating* : ${anu.result.rating}\n*Desk* : ${anu.result.description}\n*Released On* : ${anu.result.released}\n*status:* ${anu.result.status}`
-                mans.sendMessage(from, buffer, image, { quoted: mek, caption: hasil })
-                break
-                case 'manga1':
-                reply(`wait loading`)
-if (args.length < 1) return reply(`mau nyari anime apa um?`)
-query = args.join(" ")
-anu = await fetchJson(`https://rest-api-megumin1.herokuapp.com/api/manga?search=${query}&apikey=beta`)
-memeklah = `note: ${anu.result.note}\ntitle: ${anu.result.title}\ngenre: ${anu.result.genre}\ntype: ${anu.result.type}\nauthor: ${anu.result.author}\nstatus: ${anu.result.status}\nscore: ${anu.result.rating}\nrealis: ${anu.result.released}\nlink: ${anu.result.link}\ndesc: ${anu.result.description}\n`
-buffer = await getBuffer(`https://i.postimg.cc/hvHsThsH/images-17.jpg`)
-mans.sendMessage(from, buffer, image, {quoted: mek, caption: memeklah})
-break
-case 'manga2': // Update NEW FITUR 
-reply(`wait loading`)
-                if (args.length < 1) return reply('nama anime nya apaang bwang?')
-                reply('[❕]loading')
-                anu = await fetchJson(`https://rest-api-megumin1.herokuapp.com/api/manga?search=${body.slice(8)}&apikey=beta`)
-                teks = `*Title:* : ${anu.result.title}\n*Desk* : ${anu.result.description}\n*Genre* : ${anu.result.description.genre}\n*Type* : ${anu.result.description.type}\n*Rating* : ${anu.result.description.rating}\n*Released* : ${anu.result.description.released}\n*status:* ${anu.result.description.status}`
-                mans.sendMessage(from, teks, text, { quoted: mek})
-                break
-                case 'manga3':
-                reply(`wait loading`)
-if (args.length < 1) return reply(`mau nyari anime apa um?`)
-query = args.join(" ")
-anu = await fetchJson(`https://rest-api-megumin1.herokuapp.com/api/manga?search=${body.slice(8)}&apikey=beta`)
-txt = `title: ${anu.result.title}\n`
-txt += `genre: ${anu.result.genre}\n`
-txt += `type: ${anu.result.type}\n`
-txt += `author: ${anu.result.author}\n`
-txt += `status: ${anu.result.status}\n`
-txt += `score: ${anu.result.rating}\n`
-txt += `realis: ${anu.result.released}\n`
-txt += `desc: ${anu.result.description}\n`
-txt += `============`
-kontol = anu.link
-for (var i in kontol) {
-txt += `\nlink download: ${i.link}\n`
-for (var y in kontol[i.link]) {
-txt += `${y.link} - ${kontol[x.link][y.link]}`
-}
-}
-buffer = await getBuffer(`https://i.postimg.cc/hvHsThsH/images-17.jpg`)
-mans.sendMessage(from, buffer, image, {quoted: mek, caption: txt})
-break
-case 'tiktok':
-  if (args.length < 1) return reply('Link nya mana')
-  reply(Loading)
-  anu = await fetchJson(`https://yotsuchan.herokuapp.com/api/download/tiktok?url=${args[0]}&apikey=Ninochan`)
-  teks = `• *Judul*: ${anu.judul}`
-  mans.sendMessage(from, teks, video, { quoted: mek})
-  break
-case 'joox':
- if (args.length < 1) return reply('Lagunya apa')
- reply(`Loading`)
- anu = await fetchJson(`https://yotsuchan.herokuapp.com/api/music/joox?apikey=Ninochan&query=${args[0]}`)
- teks = `Lagu Ditemukan!!\n\n• *Judul*: ${anu.result.lagu}\n• *Album*: ${anu.result.album}\n• *Penyanyi*: ${anu.result.penyanyi}\n• *Publish*: ${anu.result.publish}`
- thumbnail = await getBuffer(anu.result.img)
- mans.sendMessage(from, thumbnail, image, { quoted: mek, caption: teks })
- get_audio = `${anu.result.lirik}`
- mans.sendMessage(from, get_audio, text, {quoted: mek})
-    break
-case 'manga4':
-                if (args.length < 1) return reply(`username nya mana um?`)
-               reply(`wait loading`)
-                     anu  = await fetchJson(`https://rest-api-megumin1.herokuapp.com/api/manga?search=${body.slice(8)}&apikey=beta`)
-buffer = await getBuffer(`https://i.postimg.cc/hvHsThsH/images-17.jpg`)
-teks = `==================\n`
-teks += `•> *Title:* : ${anu.result.title}\nlink: https://drive.google.com${anu.result.link}\n*Genre* : ${anu.result.genre}\n*Type* : ${anu.result.type}\n*Rating* : ${anu.result.rating}\n*Released* : ${anu.result.released}\n*status:* ${anu.result.status}\n*Desk* : ${anu.result.description}`
-reply(teks.trim())
-break
-case 'manga5': // Errorr
-                if (args.length < 1) return reply(`mau nyari apaan bwang di joox?`)
-                reply(`[❕] Loading`)
-                anu = await fetchJson(`c`)
-                teks = '=================\n'
-                resa = anu.result.result
-                for (let i of resa) {
-                    teks += `•> *Title:* : ${i.title}\nlink: https://drive.google.com${i.link}\n*Genre* : ${i.genre}\n*Type* : ${i.type}\n*Rating* : ${i.rating}\n*Released* : ${i.released}\n*status:* ${i.status}\n*Desk* : ${i.description}\n=================\n`
-                }
-                reply(teks)
-                break
-                case 'tahlil': // Update NEW FITUR 
-                reply(`[❕] Loading`)
-                anu = await fetchJson(`https://rest-api-megumin1.herokuapp.com/api/muslim/tahlil?apikey=beta`)
-                lah = `•> *Title:* : ${anu.result.title}\n=================\n`
-                mans.sendMessage(from, lah, text, {quoted: mek})
-                break
-                case 'tahlil1': // Update NEW FITUR 
-                if (args.length < 1) return reply(`mau nyari apaan bwang di joox?`)
-                reply(`[❕] Loading`)
-                asu = await fetchJson(`https://rest-api-megumin1.herokuapp.com/api/muslim/tahlil?apikey=beta`)
-                teks = '=================\n'
-                resa = asu.result.result
-                for (let i of resa) {
-                    teks += `•> *Title:* : ${i.title}\nlink: https://drive.google.com${i.link}\n*Genre* : ${i.genre}\n*Type* : ${i.type}\n*Rating* : ${i.rating}\n*Released* : ${i.released}\n*status:* ${i.status}\n*Desk* : ${i.description}\n=================\n`
-                }
-                reply(teks)
-                break
-case 'infogempa':
-anu = await fetchJson(`https://rest-api-megumin1.herokuapp.com/api/infogempa?apikey=beta`)
-teks = `waktu: ${anu.result.Waktu}\nlintang: ${anu.result.Lintang}\nbujur: ${anu.result.Bujur}\nmagnitudo: ${anu.result.Magnitudo}\nkedalaman: ${anu.result.Kedalaman}\nwilayah: ${anu.result.Wilayah}`
-mans.sendMessage(from, teks, text, {quoted: mek})
-break
-case 'leave':
-if (!isOwner && !mek.key.fromMe) return reply('lo sapa bro?bukan owner mingir kontol')
-if (!mek.key.fromMe) return
-setTimeout( () => {
-mans.groupLeave(from) 
-}, 6000)
-setTimeout( () => {
-faketoko('Byee...')
-}, 6000)
-setTimeout( () => {
-faketoko('1')
-}, 5000)
-setTimeout( () => {
-faketoko('2')
-}, 1000)
-setTimeout( () => {
-faketoko('3')
-}, 0)
-break
+                case 'leave':
+                if (!isOwner && !mek.key.fromMe) return reply('lo sapa bro?bukan owner mingir kontol')
+                if (!mek.key.fromMe) return
+                setTimeout( () => {
+            mans.groupLeave(from) 
+                }, 6000)
+                setTimeout( () => {
+           faketoko('Byee...')
+                 }, 6000)
+                setTimeout( () => {
+           faketoko('1')
+                 }, 5000)
+                setTimeout( () => {
+           faketoko('2')
+                 }, 1000)
+                setTimeout( () => {
+           faketoko('3')
+                 }, 0)
+          break
 case 'wame':
           mans.updatePresence(from, Presence.composing)
           options = {
@@ -1671,67 +1372,6 @@ case 'wame':
             mans.sendMessage(from, options, text, {quoted: mek})
            mans.sendMessage(from, text1, text, {quoted: mek})
            break
-case 'caklontong':
-   anu = await fetchJson(`https://rest-api-megumin1.herokuapp.com/api/kuis/caklontong?apikey=beta`)
-   cak = `*${anu.result.soal}*`
-   setTimeout( () => {
-   reply('*➸ Jawaban :* '+anu.result.jawaban, text, {quoted: mek}) // ur cods
-   }, 30000) // 1000 = 1s,
-   setTimeout( () => {
-   reply('_10 Detik lagi…_', text) // ur cods
-   }, 20000) // 1000 = 1s,
-   setTimeout( () => {
-   reply('_20 Detik lagi_…', text) // ur cods
-   }, 10000) // 1000 = 1s,
-   setTimeout( () => {
-   reply('_30 Detik lagi_…', text) // ur cods
-   }, 2500) // 1000 = 1s,
-   setTimeout( () => {
-   mans.sendMessage(from, cak, text, {quoted: mek }) // ur cods
-   }, 0) // 1000 = 1s,
-   break
-   case 'tebakgambar':
-   anu = await fetchJson(`https://rest-api-megumin1.herokuapp.com/api/kuis/tebakgambar?apikey=beta`)
-   gambar = await getBuffer(anu.result.images)
-   setTimeout( () => {
-   reply('*➸ Jawaban :* '+anu.result.jawaban, text, {quoted: mek}) // ur cods
-   }, 30000) // 1000 = 1s,
-   setTimeout( () => {
-   reply('_10 Detik lagi…_', text) // ur cods
-   }, 20000) // 1000 = 1s,
-   setTimeout( () => {
-   reply('_20 Detik lagi_…', text) // ur cods
-   }, 10000) // 1000 = 1s,
-   setTimeout( () => {
-   reply('_30 Detik lagi_…', text) // ur cods
-   }, 2500) // 1000 = 1s,
-   setTimeout( () => {
-   mans.sendMessage(from, gambar, image, {quoted: mek }) // ur cods
-   }, 0) // 1000 = 1s,
-   break
-     case 'pubglogo':
-     ct = body.slice(9)
-     memek1 = ct.split("|")[0];
-     memek2 = ct.split("|")[1];
-     reply(`loading tot`)
-     anu = await fetchJson(`https://rest-api-megumin1.herokuapp.com/api/textmaker/game?text=${memek1}&text2=${memek2}&theme=pubg&apikey=beta`)
-     buffer = await getBuffer(anu.result.url)
-     mans.sendMessage(from, buffer, image, {quoted: mek, caption: 'nih kack'})
-     break
-     case 'owner':
-     reply(`wa.me/6285691724140\nhttps://wa.me/6285691724140`)
-     break
-case 'lirik':
-if (!q) return reply(mess.wrongFormat)
-reply(mess.wait)
-lirikLagu(q).then((res) => {
-let lirik = `Lirik Lagu ${q}
-
-${res[0].result}
-`
-reply(lirik)
-})
-break
 case 'donasi':
 lelet = `hai mau donasi?bisa tf melalui gopay,dana,pulsa silahkan lihat di bawah\ngopay: 085691724140\ndana: 085691724140\npulsa: 085691724140`
 mans.sendMessage(from, lelet, text, {quoted: mek, caption: lelet})
