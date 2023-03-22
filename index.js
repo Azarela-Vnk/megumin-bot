@@ -1,13 +1,7 @@
-/*
-]=====> Megumin ッ <=====[ 
-GW MALES RAPIHIN ANJING CAPEK GBLG
-KALO ADA YG ERROR / BUG LAPOR ASU
-MAU BETAK YA LO KONTOL ANJING KASIH TQTO
-GW KALO MAU BETAK BGSD NYOLONG BGSD
-LO TAU GK GW NIH CAPEK AJG
-MAU NANYA NANYA CHAT GW DI WA
-]=====> Megumin ッ <=====[ 
-*/
+/*megumin*/
+
+//sc by R4iden//
+
 const {
     WAConnection,
     MessageType,
@@ -52,8 +46,8 @@ const { removeBackgroundFromImageFile } = require('remove.bg')
 const { ind } = require('./language')
 const vcard = 'BEGIN:VCARD\n' +
 'VERSION:3.0\n' +
-'FN:K u r u m i \n' +
-'ORG:K u r u m i;\n' +
+'FN:B a p h o m a t e\n' +
+'ORG:B a p h o m a t e;\n' +
 'TEL;type=CELL;type=VOICE;waid=6283167443391:+6283167443391\n' +
 'END:VCARD'
 prefix = '#'
@@ -63,7 +57,7 @@ blocked = []
 limitawal = 100000
 memberlimit = 1
 
-fake = '*「 𝗠 𝗘 𝗚 𝗨 𝗠 𝗜 𝗡 」*'
+fake = '*「 BAPHOMATE 」*'
 numbernye = '0'
 targetprivate = '6283891411268'
 ghoibsu = 'tes'
@@ -73,10 +67,10 @@ blocked = []
 /*
 ]=====> SETTING DI SINI KEBAWAH BIARIN AJG <=====[
 */
-const ownerNumber = ["6288224859350@s.whatsapp.net", "6285691724140@s.whatsapp.net", "62882248593502@s.whatsapp.net", "6281545369607@s.whatsapp.net", "62856917288391@s.whatsapp.net"]
+const ownerNumber = ["6285759669252@s.whatsapp.net", "6285691724140@s.whatsapp.ne"]
 const premiumNumber = JSON.parse(fs.readFileSync('./database/user/premium.json'))
-const botName = 'MEGUMIN'
-const ownerName = 'MEGUMIN'
+const botName = 'Baphomate'
+const ownerName = 'R4id3n\nKirasinigami'
     /*
     */
     /*       
@@ -320,7 +314,7 @@ mans.on('open', () => {
 })
 mans.connect({ timeoutMs: 30 * 1000 })
 
-/*
+
 // WELCOME IMAGE MAGICK TANPA API
 mans.on('group-participants-update', async (anu) => {
     if (!welkom.includes(anu.jid)) return
@@ -381,8 +375,9 @@ pushnem = mans.contacts[num] != undefined ? mans.contacts[num].notify = undefine
     } catch (e) {
         console.log(e)
     }
-    */
-// WELCOME IMAGE MAGICK API
+    
+// WELCOME IMAGE MAGICK API 
+/*
 mans.on('group-participants-update', async (anu) => {
         if (!welkom.includes(anu.jid)) return
         try {
@@ -415,7 +410,8 @@ mans.on('group-participants-update', async (anu) => {
             console.log('Error : %s', color(e, 'red'))
         }
     })
-                
+               
+  */
   /*
 // WELCOME BIASA
 mans.on('group-participants-update', async(anu) => {
@@ -1211,53 +1207,8 @@ menu = `❏  ${ucapanWaktu}
 ├  ${prefix}toimg *reply sticker*
 └  ${prefix}sticker *reply foto/video*
 
-❏  D O W N L O A D E R
-├  ${prefix}ytmp3 *link*
-├  ${prefix}tiktok *link*
-└  ${prefix}ytmp4 *link*
-
-❏  F U N - M E N U
-├  ${prefix}caklontong
-└  ${prefix}tebakgambar
-
-❏  M A K E R - M E N U
-├  ${prefix}battle-field *teks*
-├  ${prefix}bunga *teks*
-├  ${prefix}metal *teks*
-├  ${prefix}coffee-cup2 *teks*
-├  ${prefix}woodheart *teks*
-└  ${prefix}pubglogo
-
-❏  W A L P A P E R - M E N U
-└  ${prefix}wallpaper
-
 ❏  I S L A M - M E N U
 └  ${prefix}kisahnabi *nama nabi*
-
-❏  F I L M - M E N U
-├  ${prefix}infofilm *nama film*
-├  ${prefix}carifilm *nama film*
-├  ${prefix}carifilm1 *nama film*
-└  ${prefix}playfilm *id film*
-
-❏  W I B U - M E N U
-├  ${prefix}kusonime
-├  ${prefix}manga
-├  ${prefix}manga1
-├  ${prefix}manga2
-├  ${prefix}manga3
-├  ${prefix}manga4
-└  ${prefix}manga5
-
-❏  O T H E R - M E N U
-├  ${prefix}igstalk *username*
-├  ${prefix}tiktokstalk *ussername*
-├  ${prefix}lirik *query*
-├  ${prefix}meme
-├  ${prefix}cuacaindo *query*
-├  ${prefix}cuaca1 *query*
-├  ${prefix}covidindo *query*
-└  ${prefix}ytsearch *query*
 
 ❏  A B O U T - B O T
 ├  ${prefix}owner
@@ -1266,13 +1217,13 @@ menu = `❏  ${ucapanWaktu}
 └  ${prefix}runtime
 
 ❏  T H A N K S T O
-├  *marz/Ninochan*
+├  *Kira*
 ├  *penyedia apikey*
 └  *mhank bar bar*
 
 ❏  I N G F O - B O T
 ├  Lib : Baileys
-└  Creator : Megumin`
+└  Creator : R4id3n`
 mans.sendMessage(from, { text: menu, jpegThumbnail: fs.readFileSync('./image/anjay.jpeg')}, 'extendedTextMessage', { quoted: mek, contextInfo: { forwardingScore: 508, isForwarded: true, mentionedJid: [me] }})
             break
                 case 'speed':
@@ -1564,6 +1515,15 @@ buffer = await getBuffer(anu.result.url)
 buffer1 = await getBuffer(anu.result.delete_url)
 shit = `${anu.result.url}\n${anu.result.info}`
 mans.sendMessage(from, buffer, image, {quoted: mek, caption: shit})
+case 'quran':
+if (args.length == 0) return reply(`Example: ${prefix + command} surah 1 ayat 1`) 
+anu = await fetchJson(`https://saipulanuar.ga/api/muslim/quran?surah=1&ayat=2`) 
+teks = `Nama surat : ${anu.result.long}\nTransliteration : ${anu.result.transliteration.en}\nJuz : ${anu.result.juz}\nPage : ${anu.result.page}\n----------\nTeks : ${anu.result.text.arab}\n----------\nTranslation : ${anu.result.text.transliteration.en}\n----------\ntafsir : ${anu.result.tafsir.id.short}`
+mans.sendMessage(from, teks, text, {quoted:mek }) 
+buffer = await getBuffer(anu.result.result)
+Test = `Audio : ${anu.result.audio.secondary}`
+mans.sendMessage(from, buffer, audio, {Mimetype: 'audio/mp3', filename: `${anu.result.audio.secondary}.mp3`, quoted: mek, caption: 'Test'})
+break
 case 'kisahnabi':
 reply(`wait loading`)
 if (args.length == 0) return reply(`Example: ${prefix + command} Muhammad`)
