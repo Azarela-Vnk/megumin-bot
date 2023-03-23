@@ -8,6 +8,12 @@
 <a href="#"><img title="MAINTENED" src="https://img.shields.io/badge/MAINTENED-YES-blue.svg"</a>
 </p>
 
+</p>
+<h2 align="center">-> SPOTIFY <-</h2>
+<p align="center">
+  <a href="https://open.spotify.com/track/5rRAOgZOAqHwUMwVAXkUYU?si=66_j1Qi3SWWI4yJLNQVQcQ" target="_blank"><img src="https://now-playing-on-spotify.vercel.app/api/spotify" alt="Spotify Now Playing" width="350"/></a>
+</p>
+
 ## Clone this project
 
 ```bash
