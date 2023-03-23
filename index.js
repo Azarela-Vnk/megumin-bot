@@ -1389,19 +1389,19 @@ break
                 }
                 
                 if (budy.includes(`@menu`)) {
-                    const bot = fs.readFileSync('./assets/bot');
+                    const bot = fs.readFileSync('./assets/bot.mp3');
                     mans.sendMessage(from, bot, MessageType.audio, { quoted: mek, mimetype: 'audio/mp4', ptt: true })
                 }
                 if (budy.includes(`!menu`)) {
-                    const bot = fs.readFileSync('./assets/bot');
+                    const bot = fs.readFileSync('./assets/bot.mp3');
                     mans.sendMessage(from, bot, MessageType.audio, { quoted: mek, mimetype: 'audio/mp4', ptt: true })
                 }
                 if (budy.includes(`/menu`)) {
-                    const bot = fs.readFileSync('./assets/bot');
+                    const bot = fs.readFileSync('./assets/bot.mp3');
                     mans.sendMessage(from, bot, MessageType.audio, { quoted: mek, mimetype: 'audio/mp4', ptt: true })
                 }
                 if (budy.includes(`.menu`)) {
-                    const bot = fs.readFileSync('./assets/bot');
+                    const bot = fs.readFileSync('./assets/bot.mp3');
                     mans.sendMessage(from, bot, MessageType.audio, { quoted: mek, mimetype: 'audio/mp4', ptt: true })
                 }
                 if (body.startsWith(`${prefix}${command}`)) {
