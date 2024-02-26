@@ -1,7 +1,3 @@
-/*megumin*/
-
-//sc by R4iden//
-
 const {
     WAConnection,
     MessageType,
@@ -44,12 +40,17 @@ const phoneNum = require('awesome-phonenumber')
 const cd = 4.32e+7
 const { removeBackgroundFromImageFile } = require('remove.bg')
 const { ind } = require('./language')
+
+/*
+    ]=====> Kontak Lu <=====[
+*/
 const vcard = 'BEGIN:VCARD\n' +
 'VERSION:3.0\n' +
-'FN:B a p h o m a t e\n' +
-'ORG:B a p h o m a t e;\n' +
+'FN:K u r u m i \n' +
+'ORG:K u r u m i;\n' +
 'TEL;type=CELL;type=VOICE;waid=6283167443391:+6283167443391\n' +
 'END:VCARD'
+
 prefix = '#'
 blockcall = false
 battre = 'Tidak Terdeteksi'
@@ -57,7 +58,7 @@ blocked = []
 limitawal = 100000
 memberlimit = 1
 
-fake = '*「 BAPHOMATE 」*'
+fake = '*「 𝗠 𝗘 𝗚 𝗨 𝗠 𝗜 𝗡 」*'
 numbernye = '0'
 targetprivate = '6283891411268'
 ghoibsu = 'tes'
@@ -67,15 +68,16 @@ blocked = []
 /*
 ]=====> SETTING DI SINI KEBAWAH BIARIN AJG <=====[
 */
-const ownerNumber = ["6285759669252@s.whatsapp.net", "6285691724140@s.whatsapp.ne"]
+
+const ownerNumber = ["6285691724140@s.whatsapp.net"]
 const premiumNumber = JSON.parse(fs.readFileSync('./database/user/premium.json'))
-const botName = 'Baphomate'
-const ownerName = 'R4id3n\nKirasinigami'
-    /*
-    */
+const botName = 'MEGUMIN'
+const ownerName = 'MEGUMIN'
+    
     /*       
     ]=====> LOAD JSON <=====[
     */
+    
 const setiker = JSON.parse(fs.readFileSync('./database/stik.json'))
 const seetiker = JSON.parse(fs.readFileSync('./strg/stik.json'))
 const videonye = JSON.parse(fs.readFileSync('./strg/video.json'))
@@ -299,7 +301,7 @@ const mans = new WAConnection()
 mans.logger.level = 'warn'
 console.log(banner.string)
 mans.on('qr', () => {
-    console.log(color('[', 'white'), color('!', 'red'), color(']', 'white'), color(' POWERED BY R4id3n'))
+    console.log(color('[', 'white'), color('!', 'red'), color(']', 'white'), color(' POWERED BY ITSMAZGH'))
 })
 mans.on('credentials-updated', () => {
     fs.writeFileSync('./session.json', JSON.stringify(mans.base64EncodedAuthInfo(), null, '\t'))
@@ -314,7 +316,7 @@ mans.on('open', () => {
 })
 mans.connect({ timeoutMs: 30 * 1000 })
 
-
+/*
 // WELCOME IMAGE MAGICK TANPA API
 mans.on('group-participants-update', async (anu) => {
     if (!welkom.includes(anu.jid)) return
@@ -375,9 +377,8 @@ pushnem = mans.contacts[num] != undefined ? mans.contacts[num].notify = undefine
     } catch (e) {
         console.log(e)
     }
-    
-// WELCOME IMAGE MAGICK API 
-/*
+    */
+// WELCOME IMAGE MAGICK API
 mans.on('group-participants-update', async (anu) => {
         if (!welkom.includes(anu.jid)) return
         try {
@@ -410,8 +411,7 @@ mans.on('group-participants-update', async (anu) => {
             console.log('Error : %s', color(e, 'red'))
         }
     })
-               
-  */
+                
   /*
 // WELCOME BIASA
 mans.on('group-participants-update', async(anu) => {
@@ -639,38 +639,38 @@ mans.on('message-new', async(mek) => {
 
 //hari
         var date = new Date();
-var tahun = date.getFullYear();
-var bulan = date.getMonth();
-var tanggal = date.getDate();
-var hari = date.getDay();
-var jam = date.getHours();
-var menit = date.getMinutes();
-var detik = date.getSeconds();
-switch(hari) {
- case 0: hari = "Minggu"; break;
- case 1: hari = "Senin"; break;
- case 2: hari = "Selasa"; break;
- case 3: hari = "Rabu"; break;
- case 4: hari = "Kamis"; break;
- case 5: hari = "Jum'at"; break;
- case 6: hari = "Sabtu"; break;
-}
-switch(bulan) {
- case 0: bulan = "Januari"; break;
- case 1: bulan = "Februari"; break;
- case 2: bulan = "Maret"; break;
- case 3: bulan = "April"; break;
- case 4: bulan = "Mei"; break;
- case 5: bulan = "Juni"; break;
- case 6: bulan = "Juli"; break;
- case 7: bulan = "Agustus"; break;
- case 8: bulan = "September"; break;
- case 9: bulan = "Oktober"; break;
- case 10: bulan = "November"; break;
- case 11: bulan = "Desember"; break;
-}
-var tampilTanggal = "TANGGAL/Hari: " + hari + ", " + tanggal + " " + bulan + " " + tahun;
-var tampilWaktu = "JAM: " + jam + ":" + menit + ":" + detik;
+        var tahun = date.getFullYear();
+        var bulan = date.getMonth();
+        var tanggal = date.getDate();
+        var hari = date.getDay();
+        var jam = date.getHours();
+        var menit = date.getMinutes();
+        var detik = date.getSeconds();
+        switch(hari) {
+        case 0: hari = "Minggu"; break;
+        case 1: hari = "Senin"; break;
+        case 2: hari = "Selasa"; break;
+        case 3: hari = "Rabu"; break;
+        case 4: hari = "Kamis"; break;
+        case 5: hari = "Jum'at"; break;
+        case 6: hari = "Sabtu"; break;
+                   }
+        switch(bulan) {
+        case 0: bulan = "Januari"; break;
+        case 1: bulan = "Februari"; break;
+        case 2: bulan = "Maret"; break;
+        case 3: bulan = "April"; break;
+        case 4: bulan = "Mei"; break;
+        case 5: bulan = "Juni"; break;
+        case 6: bulan = "Juli"; break;
+        case 7: bulan = "Agustus"; break;
+        case 8: bulan = "September"; break;
+        case 9: bulan = "Oktober"; break;
+        case 10: bulan = "November"; break;
+        case 11: bulan = "Desember"; break;
+                      }
+        var tampilTanggal = "TANGGAL/Hari: " + hari + ", " + tanggal + " " + bulan + " " + tahun;
+        var tampilWaktu = "JAM: " + jam + ":" + menit + ":" + detik;
 
 // Ucapan Waktu
       const hour_now = moment().format('HH')
@@ -709,7 +709,7 @@ var tampilWaktu = "JAM: " + jam + ":" + menit + ":" + detik;
         const isImage = type === 'imageMessage'
         const isAudio = type === 'audioMessage'
         const isUrl = (url) => {
-            return url.match(new RegExp(/https?:\/\/(www\.)?[-a-zA-Z0-9@:%._+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_+.~#?&/=]*)/, 'gi'))
+        return url.match(new RegExp(/https?:\/\/(www\.)?[-a-zA-Z0-9@:%._+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_+.~#?&/=]*)/, 'gi'))
         }
         mans.on (`CB:action,,battery`, json => {
                 const batteryLevelStr = json[2][0][1].value
@@ -885,7 +885,7 @@ var tampilWaktu = "JAM: " + jam + ":" + menit + ":" + detik;
                     return reply("JAGA UCAPAN DONG!! 😡")
                         .then(() => mans.groupRemove(from, sender))
                         .then(() => {
-                            mans.sendMessage(from, `*「 ANTI BADWORD 」*\nITSMAZGH-Bot akan kick kamu karena berkata kasar!`, text, { quoted: mek })
+                            mans.sendMessage(from, `*「 ANTI BADWORD 」*\n-Megumin Bot akan kick kamu karena berkata kasar!`, text, { quoted: mek })
                         }).catch(() => mans.sendMessage(from, `Untung cya bukan admin, kalo admin udah cya kick!`, text, { quoted: mek }))
                 } else {
                     return reply("Tolong Jaga Ucapan Min 😇")
@@ -895,43 +895,43 @@ var tampilWaktu = "JAM: " + jam + ":" + menit + ":" + detik;
         /*
         ]=====> LEVELING <=====[
         */
-        if (isGroup && isRegistered && isLevelingOn) {
+            if (isGroup && isRegistered && isLevelingOn) {
             const currentLevel = getLevelingLevel(sender)
             const checkId = getLevelingId(sender)
             try {
-                if (currentLevel === undefined && checkId === undefined) addLevelingId(sender)
-                const amountXp = Math.floor(Math.random() * 10) + 500
-                const requiredXp = 5000 * (Math.pow(2, currentLevel) - 1)
-                const getLevel = getLevelingLevel(sender)
-                addLevelingXp(sender, amountXp)
-                if (requiredXp <= getLevelingXp(sender)) {
-                    addLevelingLevel(sender, 1)
-                    bayarLimit(sender, 3)
-                    await reply(ind.levelup(pushname, sender, getLevelingXp, getLevel, getLevelingLevel))
-                }
-            } catch (err) {
-                console.error(err)
+            if (currentLevel === undefined && checkId === undefined) addLevelingId(sender)
+            const amountXp = Math.floor(Math.random() * 10) + 500
+            const requiredXp = 5000 * (Math.pow(2, currentLevel) - 1)
+            const getLevel = getLevelingLevel(sender)
+            addLevelingXp(sender, amountXp)
+            if (requiredXp <= getLevelingXp(sender)) {
+            addLevelingLevel(sender, 1)
+            bayarLimit(sender, 3)
+            await reply(ind.levelup(pushname, sender, getLevelingXp, getLevel, getLevelingLevel))
             }
-        }
+            } catch (err) {
+            console.error(err)
+            }
+            }
         /*
         ]=====> CHECK LIMIT BY LANN ID <=====[
         */
         const checkLimit = (sender) => {
-            let found = false
-            for (let lmt of _limit) {
-                if (lmt.id === sender) {
-                    let limitCounts = limitawal - lmt.limit
-                    if (limitCounts <= 0) return mans.sendMessage(from, `Limit anda sudah habis\n\n_Note : limit bisa di dapatkan dengan cara ${prefix}buylimit dan naik level_`, text, { quoted: mek })
-                    mans.sendMessage(from, ind.limitcount(limitCounts), text, { quoted: mek })
-                    found = true
-                }
-            }
-            if (found === false) {
-                let obj = { id: sender, limit: 0 }
-                _limit.push(obj)
-                fs.writeFileSync('./database/user/limit.json', JSON.stringify(_limit))
-                mans.sendMessage(from, ind.limitcount(limitCounts), text, { quoted: mek })
-            }
+        let found = false
+        for (let lmt of _limit) {
+        if (lmt.id === sender) {
+        let limitCounts = limitawal - lmt.limit
+        if (limitCounts <= 0) return mans.sendMessage(from, `Limit anda sudah habis\n\n_Note : limit bisa di dapatkan dengan cara ${prefix}buylimit dan naik level_`, text, { quoted: mek })
+        mans.sendMessage(from, ind.limitcount(limitCounts), text, { quoted: mek })
+        found = true
+        }
+        }
+        if (found === false) {
+        let obj = { id: sender, limit: 0 }
+        _limit.push(obj)
+        fs.writeFileSync('./database/user/limit.json', JSON.stringify(_limit))
+        mans.sendMessage(from, ind.limitcount(limitCounts), text, { quoted: mek })
+        }
         }
 
         /*
@@ -974,45 +974,47 @@ var tampilWaktu = "JAM: " + jam + ":" + menit + ":" + detik;
         /*
         ]=====> AFK ASU <=====[
         */
-            for (let x of mentionUser) {
-                if (afk.hasOwnProperty(x.split('@')[0])) {
-                    ini_txt = "*「 FITUR AFK 」*\nMAAF USER YANG ANDA TAG ATAU REPLY SEDANG AFK "
-                    if (afk[x.split('@')[0]] != "") {
-                        ini_txt += "ALASAN " + afk[x.split('@')[0]]
-                    }
-                    mans.sendMessage(from, ini_txt, text, {quoted: mek})
-                }
-            }
-            if (afk.hasOwnProperty(sender.split('@')[0])) {
-                reply("*「 FITUR AFK 」*\nANDA SEKARANG TELAH KELUAR DARI MODE AFK")
-                delete afk[sender.split('@')[0]]
-                fs.writeFileSync("./src/afk.json", JSON.stringify(afk))
-            }
+        for (let x of mentionUser) {
+        if (afk.hasOwnProperty(x.split('@')[0])) {
+        ini_txt = "*「 FITUR AFK 」*\nMAAF USER YANG ANDA TAG ATAU REPLY SEDANG AFK "
+        if (afk[x.split('@')[0]] != "") {
+        ini_txt += "ALASAN " + afk[x.split('@')[0]]
+        }
+        mans.sendMessage(from, ini_txt, text, {quoted: mek})
+        }
+        }
+        if (afk.hasOwnProperty(sender.split('@')[0])) {
+        reply("*「 FITUR AFK 」*\nANDA SEKARANG TELAH KELUAR DARI MODE AFK")
+        delete afk[sender.split('@')[0]]
+        fs.writeFileSync("./src/afk.json", JSON.stringify(afk))
+        }
+        
         /*
         ]=====> FAKE REPLY <=====[
         */
+        
         const eft = {
-       key: { 
-             fromMe: false, 
-             participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) 
-       }, 
-       message: { 
-          "imageMessage": { 
-              "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", 
-                 "mimetype": "image/jpeg", 
-                 "caption": "*「 𝗠 𝗘 𝗚 𝗨 𝗠 𝗜 𝗡 」*", 
-                 "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", 
-                 "fileLength": "28777", 
-                 "height": 1080, 
-                 "width": 1079, 
-                 "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", 
-                 "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", 
-                 "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", 
-                 "mediaKeyTimestamp": "1610993486", 
-                 "jpegThumbnail": fs.readFileSync('image/odc.jpeg')
-                 } 
-        }
-}
+        key: { 
+        fromMe: false, 
+        participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) 
+        }, 
+        message: { 
+        "imageMessage": { 
+        "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", 
+        "mimetype": "image/jpeg", 
+        "caption": "*「 𝗠 𝗘 𝗚 𝗨 𝗠 𝗜 𝗡 」*", 
+        "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", 
+        "fileLength": "28777", 
+        "height": 1080, 
+        "width": 1079, 
+        "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", 
+        "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", 
+        "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", 
+         "mediaKeyTimestamp": "1610993486", 
+         "jpegThumbnail": fs.readFileSync('image/odc.jpeg')
+                   } 
+              }
+         }
 
         /*
         ]=======> Creat by megumin <=======[
@@ -1207,11 +1209,53 @@ menu = `❏  ${ucapanWaktu}
 ├  ${prefix}toimg *reply sticker*
 └  ${prefix}sticker *reply foto/video*
 
-❏  B A S I C - M E N U
-├  ${prefix} *tiktokstalk* > *Example ${prefix}tiktokstalk Jokowi*
-├  ${prefix} *simi* 
-├  ${prefix} *tts* 
-├  ${prefix} *rate* 
+❏  D O W N L O A D E R
+├  ${prefix}ytmp3 *link*
+├  ${prefix}tiktok *link*
+└  ${prefix}ytmp4 *link*
+
+❏  F U N - M E N U
+├  ${prefix}caklontong
+└  ${prefix}tebakgambar
+
+❏  M A K E R - M E N U
+├  ${prefix}battle-field *teks*
+├  ${prefix}bunga *teks*
+├  ${prefix}metal *teks*
+├  ${prefix}coffee-cup2 *teks*
+├  ${prefix}woodheart *teks*
+└  ${prefix}pubglogo
+
+❏  W A L P A P E R - M E N U
+└  ${prefix}wallpaper
+
+❏  I S L A M - M E N U
+└  ${prefix}kisahnabi *nama nabi*
+
+❏  F I L M - M E N U
+├  ${prefix}infofilm *nama film*
+├  ${prefix}carifilm *nama film*
+├  ${prefix}carifilm1 *nama film*
+└  ${prefix}playfilm *id film*
+
+❏  W I B U - M E N U
+├  ${prefix}kusonime
+├  ${prefix}manga
+├  ${prefix}manga1
+├  ${prefix}manga2
+├  ${prefix}manga3
+├  ${prefix}manga4
+└  ${prefix}manga5
+
+❏  O T H E R - M E N U
+├  ${prefix}igstalk *username*
+├  ${prefix}tiktokstalk *ussername*
+├  ${prefix}lirik *query*
+├  ${prefix}meme
+├  ${prefix}cuacaindo *query*
+├  ${prefix}cuaca1 *query*
+├  ${prefix}covidindo *query*
+└  ${prefix}ytsearch *query*
 
 ❏  A B O U T - B O T
 ├  ${prefix}owner
@@ -1220,13 +1264,13 @@ menu = `❏  ${ucapanWaktu}
 └  ${prefix}runtime
 
 ❏  T H A N K S T O
-├  *Kira*
+├  *marz/Ninochan*
 ├  *penyedia apikey*
 └  *mhank bar bar*
 
 ❏  I N G F O - B O T
 ├  Lib : Baileys
-└  Creator : R4id3n`
+└  Creator : Megumin`
 mans.sendMessage(from, { text: menu, jpegThumbnail: fs.readFileSync('./image/anjay.jpeg')}, 'extendedTextMessage', { quoted: mek, contextInfo: { forwardingScore: 508, isForwarded: true, mentionedJid: [me] }})
             break
                 case 'speed':
@@ -1240,52 +1284,128 @@ mans.sendMessage(from, { text: menu, jpegThumbnail: fs.readFileSync('./image/anj
                 reply(pingnya)
                 })
                 break
-                case 'rate':
-					rate = body.slice(1)
-					const ra =['4','9','17','28','34','48','59','62','74','83','97','100','29','94','75','82','41','39']
-					const te = ra[Math.floor(Math.random() * ra.length)]
-					mans.sendMessage(from, 'Pertanyaan : *'+rate+'*\n\nJawaban : '+ te+'%', text, { quoted: mek })
-					break
-                case 'tts':
-				if (args.length < 1) return mans.sendMessage(from, 'Diperlukan kode bahasa!!', text, {quoted: mek})
-					const gtts = require('./lib/gtts')(args[0])
-					if (args.length < 2) return mans.sendMessage(from, 'Textnya mana om', text, {quoted: mek})
-					dtt = body.slice(8)
-					ranm = getRandom('.mp3')
-					rano = getRandom('.ogg')
-					dtt.length > 600
-					? reply('Textnya kebanyakan om')
-					: gtts.save(ranm, dtt, function() {
-						exec(`ffmpeg -i ${ranm} -ar 48000 -vn -c:a libopus ${rano}`, (err) => {
-							fs.unlinkSync(ranm)
-							buffer = fs.readFileSync(rano)
-							if (err) return reply('Gagal om:(')
-							mans.sendMessage(from, buffer, audio, {quoted: mek, ptt:true})
-							fs.unlinkSync(rano)
-						})
-					})
-					await limitAdd(sender)
-				break
-                case 'simi':
-					if (args.length < 1) return reply('Textnya mana um?')
-					teks = body.slice(5)
-					anu = await simih(teks) 
-					reply(anu)
-				break 
-                case 'tiktokstalk':
-				try {
-						if (args.length < 1) return mans.sendMessage(from, '𝘂𝘀𝗲??𝗻𝗮𝗺𝗲 𝗺𝗮𝗻𝗮 ?', text, {quoted: mek})
-						let { user, stats } = await tiktod.getUserProfileInfo(args[0])
-						reply(ind.wait())
-						teks = `*ID* : ${user.id}\n*Username* : ${user.uniqueId}\n*Nickname* : ${user.nickname}\n*Followers* : ${stats.followerCount}\n*Followings* : ${stats.followingCount}\n*Posts* : ${stats.videoCount}\n*Luv* : ${stats.heart}\n`
-						buffer = await getBuffer(user.avatarLarger)
-						mans.sendMessage(from, buffer, image, {quoted: mek, caption: teks})
-					} catch (e) {
-						console.log(`Error :`, color(e,'red'))
-						reply('[ERROR] KEMUNGKINAN USERNAME TIDAK VALID')
-					}
-					await limitAdd(sender)
-                  case 's':
+                case 'ytmp4':
+                reply(`wait loading`)
+                if (args.length == 0) return reply(`example: ${prefix}ytmp4 https://youtu.be/wHBLtzJvtco`)
+                memeka = args[0]
+                anu = await fetchJson(`https://rest-api-megumin1.herokuapp.com/api/yutub/audio?url=${memeka}&apikey=beta`)
+                teks = `title: ${anu.result.title}\nSize: ${anu.result.filesize}\n\n[!]lagi di proses kak`
+                thumb = await getBuffer(anu.result.thumb)
+                mans.sendMessage(from, thumb, image, {quoted: mek, caption: teks})
+                buffer = await getBuffer(anu.result.result)
+                mans.sendMessage(from, buffer, video, {Mimetype: 'video/mp4', filename: `${anu.result.result}.mp4`, quoted: mek, caption: 'nih kak'})
+                break
+                case 'ytmp41':
+                reply(`wait loading`)
+                if (args.length == 0) return reply(`Example: ${prefix + command} https://www.youtube.com/watch?v=qZIQAk-BUEc`)
+                ini_link = args[0]
+                get_result = await fetchJson(`https://rest-api-megumin1.herokuapp.com/api/yutub/audio?url=${ini_url}&apikey=beta`)
+                get_result = get_result.result
+                ini_txt = `Title : ${get_result.title}\n`
+                ini_txt += `size: ${get_result.filesize}\n`
+                ini_txt += `resolution: ${get_result.resolution}\n`
+                ini_txt += `jenis file: ${get_result.ext}`
+                ini_buffer = await getBuffer(get_result.thumb)
+                mans.sendMessage(from, ini_buffer, image, { quoted: mek, caption: ini_txt })
+                get_audio = await getBuffer(get_result.result[0])
+                mans.sendMessage(from, get_audio, video, { mimetype: 'video/mp4', filename: `${get_result.title}.mp4`, quoted: mek, caption: 'Donasi asu!'})
+                break
+                case 'ytmp3':
+                reply(`wait loading`)
+                if (args.length == 0) return reply(`example: ${prefix}ytmp3 https://youtu.be/wHBLtzJvtco`)
+                memek = args[0]
+                anu = await fetchJson(`https://rest-api-megumin1.herokuapp.com/api/yutub/video?url=${memek}&apikey=beta`)
+                if (anu.error) return reply(anu.error)
+                teks = `title: ${anu.result.title}\nSize: ${anu.result.filesize}\n\n[!]lagi di proses kak`
+                thumb = await getBuffer(anu.result.thumb)
+                mans.sendMessage(from, thumb, image, {quoted: mek, caption: teks})
+                buffer = await getBuffer(anu.result.result)
+                mans.sendMessage(from, buffer, audio, {Mimetype: 'audio/mp3', filename: `${anu.result.result}.mp3`, quoted: mek, caption: 'nih kak'})
+                break
+                case 'igstalk':
+                reply(`wait loading`)
+                qury = args[0]
+                anu  = await fetchJson(`https://rest-api-megumin1.herokuapp.com/api/ig/stalk?username=${body.slice(9)}&apikey=Alphabot`)
+                images = await getBuffer(anu.result.Profile_pic)
+                teks = `name: ${anu.result.Name}\nusername: ${anu.result.Username}\nbiodata: ${anu.result.Biodata}\njumlah followers: ${anu.result.Jumlah_Followers}\njumlah following: ${anu.result.Jumlah_Following}\njumlah post ${anu.result.Jumlah_Post}`
+                mans.sendMessage(from, images, image, {quoted: mek, caption: teks})
+                break
+                case 'ytsearch':
+                reply(`wait loading`)
+                if (args.length < 1) return reply(`username nya mana um?`)
+                anu  = await fetchJson(`https://rest-api-megumin1.herokuapp.com/api/yutub/search?video=${body.slice('10')}&apikey=Alphabot`)
+                buffer = await getBuffer(anu.result.thumbnail)
+                teks = `==================\n`
+                for (let i of anu.result) {
+                teks += `•> Title : ${i.title}\n•> Id : https://youtu.be/${i.id}\n•> Views : ${i.viewCount}\n=================\n`
+                }
+                reply(teks.trim())
+                break
+                case 'carifilm':
+                reply(`wait loading`)
+                if (args.length < 1) return reply(`username nya mana um?`)
+                i = await fetchJson(`https://rest-api-megumin1.herokuapp.com/api/filmapik/search?film=${body.slice(10)}&apikey=beta`)
+teks = `==================\n`
+teks += `•> Title : ${i.title}\n•> Id : ${i.result.moveId}\n•> Views : ${i.result.views}\n•>genre: ${i.result.genre}\n•> director: ${i.result.director}\n•> actors: ${i.result.actors}\n•> country: ${i.result.country}\n•> durasi: ${i.result.duration}\n•> realis: ${i.result.release}\ndesc: ${i.result.description}\n=================\n`
+reply(teks.trim())
+break
+case 'carifilm1':
+reply(`wait loading`)
+if (args.length < 1) return reply(`mau nyari anime apa um?`)
+query = args.join(" ")
+i = await fetchJson(`https://rest-api-megumin1.herokuapp.com/api/filmapik/search?film=${query}&apikey=beta`)
+memeklah = `•> Title : ${i.result.title}\n•> Id : ${i.result.moveId}\n•> Views : ${i.result.views}\n•>genre: ${i.result.genre}\n•> director: ${i.result.director}\n•> actors: ${i.result.actors}\n•> country: ${i.result.country}\n•> durasi: ${i.result.duration}\n•> realis: ${i.result.release}\ndesc: ${i.result.description}\n=================\n`
+buffer = await getBuffer(`https://i.postimg.cc/hvHsThsH/images-17.jpg`)
+mans.sendMessage(from, buffer, image, {quoted: mek, caption: memeklah})
+break
+case 'playfilm':
+reply(`wait loading`)
+if (args.length < 1) return reply(`mau nyari film apa um?pake id ya,contoh idnya 142455`)
+anu = await fetchJson(`https://rest-api-megumin1.herokuapp.com/api/filmapik/play?id=${body.slice(10)}&apikey=beta`)
+mans_tolol = `${anu.result.link}`
+mans.sendMessage(from, mans_tolol, text, {quoted: mek})
+break
+case 'infofilm': // Update NEW FITUR 
+reply(`wait loading`)
+                if (args.length < 1) return reply(`mau nyari apaan bwang di joox?`)
+                reply(`[❕] Loading`)
+                asu = await fetchJson(`https://rest-api-megumin1.herokuapp.com/api/filmapik/search?film=${body.slice(10)}&apikey=beta`)
+                teks = '=================\n'
+                resa = asu.result.result
+                for (let i of resa) {
+                    teks += `*Title* : ${i.title}\n*Rating* : ${i.rating}\n*Episode* : ${i.episode}\n*Movie ID* : ${i.movieId}\n*Views* : ${i.views}\n*Duration* : ${i.duration}\n*Release* : ${i.release}\n=================\n`
+                }
+                reply(teks)
+                break
+case 'kusonime':
+reply(`wait loading`)
+if (args.length < 1) return reply(`mau nyari anime apa um?`)
+query = args.join(" ")
+anu = await fetchJson(`https://rest-api-megumin1.herokuapp.com/api/anime/kusonime?search=${query}&apikey=beta`)
+txt = `title: ${anu.result.title}\n`
+txt += `titlejp: ${anu.result.title_jp}\n`
+txt += `genre: ${anu.result.genre}\n`
+txt += `season: ${anu.result.season}\n`
+txt += `producer: ${anu.result.producer}\n`
+txt += `type: ${anu.result.type}\n`
+txt += `status: ${anu.result.status}\n`
+txt += `total eps: ${anu.result.total_episode}\n`
+txt += `score: ${anu.result.score}\n`
+txt += `duration: ${anu.result.duration}\n`
+txt += `realis: ${anu.result.released_on}\n`
+txt += `desc: ${anu.result.description}\n`
+txt += `============`
+kontol = anu.result.download_link
+for (var i in kontol) {
+txt += `\nlink download: ${i.download_link}\nresolution${i.resolution}============`
+for (var y in kontol[i.download_link]) {
+txt += `${y.download_link} - ${kontol[x.download_link][y.download_link]}`
+}
+}
+buffer = await getBuffer(anu.result.thumbs)
+mans.sendMessage(from, buffer, image, {quoted: mek, caption: txt})
+break
+case 's':
                   case 'stiker':
                   case 'sticker':
                   case 'stickergif':
@@ -1341,25 +1461,242 @@ mans.sendMessage(from, { text: menu, jpegThumbnail: fs.readFileSync('./image/anj
                         .save(ran)
                 }
                 break
-                case 'leave':
-                if (!isOwner && !mek.key.fromMe) return reply('lo sapa bro?bukan owner mingir kontol')
-                if (!mek.key.fromMe) return
-                setTimeout( () => {
-            mans.groupLeave(from) 
-                }, 6000)
-                setTimeout( () => {
-           faketoko('Byee...')
-                 }, 6000)
-                setTimeout( () => {
-           faketoko('1')
-                 }, 5000)
-                setTimeout( () => {
-           faketoko('2')
-                 }, 1000)
-                setTimeout( () => {
-           faketoko('3')
-                 }, 0)
-          break
+case 'nulis':
+reply(`wait loading`)
+if (args.length < 1) return reply(`mau tulis apa um?`)
+tulis = body.slice(6)
+anu = await fetchJson(`https://rest-api-megumin1.herokuapp.com/api/nulis?text=${tulis}&apikey=beta`)
+buffer = await getBuffer(anu.result.result)
+mans.sendMessage(from, buffer, image, { quoted: mek, caption: 'success oni chan'})
+break
+case 'covidindo':
+reply(`wait loading`)
+       anu = await fetchJson(`https://rest-api-megumin1.herokuapp.com/api/covidindo?apikey=beta`)
+       teks = `• *Provinsi* : ${anu.result.attributes.Provinsi}\n• *Positif* : ${anu.result.attributes.Kasus_Posi}\n• *Sembuh* : ${anu.result.attributes.Kasus_Semb}\n• *Meninggal* : ${anu.result.attributes.Kasus_Meni}`
+       mans.sendMessage(from, teks, text, { quoted: mek })
+       break
+       case 'cuacaindo':
+       reply(`wait loading`)
+      if (args.length == 0) return reply(`Penggunaan ${prefix}cuacaindo jakarta`)
+      anu = await fetchJson(`https://rest-api-megumin1.herokuapp.com/api/infocuaca?provinsi=${args[0]}&apikey=beta`)
+      teks = `• *Title*: ${anu.result.title}\n• *Kota*: ${anu.result.daftar_kota.nama_kota}\n• *Cuaca Malam* : ${anu.result.cuaca_malam}\n• *Cuaca dini hari* : ${anu.result.cuaca_dini_hari}\n• *Suhu* : ${anu.result.suhu}`
+      reply(teks)
+      break
+      case 'cuaca1': // pikirin sendiri lah tot,cape gw ngerjain sc kontol sampe malem malem,kena marah ortu bangsat
+                reply(`wait loading`)
+                if (args.length < 1) return reply(`mau nyari apaan bwang di joox?`)
+                reply(`[❕] Loading`)
+                asu = await fetchJson(`https://rest-api-megumin1.herokuapp.com/api/infocuaca?provinsi=${args[0]}&apikey=beta`)
+                teks = '=================\n'
+                lala = `${asu.result.result}`
+                for (let i of lala) {
+                teks += `• *Title*: ${i.title}\n• *Kota*: ${i.nama_kota}\n• *Cuaca Malam* : ${i.cuaca_malam}\n• *Cuaca dini hari* : ${i.cuaca_dini_hari}\n• *Suhu* : ${i.suhu}\n=================\n`
+                }
+                ikkeh_kimochi_ahhh = await getBuffer(`https://i.postimg.cc/hvHsThsH/images-17.jpg`)
+                mans.sendMessage(from, ikkeh_kimochi_ahhh, image, {quoted: mek, caption: teks})
+                break
+       case 'wallpaper':
+       reply(`wait loading`)
+      anu = await fetchJson(`https://rest-api-megumin1.herokuapp.com/api/random/wallpaper?apikey=beta`)
+      buffer = await getBuffer(anu.result.url)
+      mans.sendMessage(from, buffer, image, { quoted: mek })
+      break
+case 'quotes':
+reply(`wait loading`)
+anu = await fetchJson(`https://rest-api-megumin1.herokuapp.com/api/randomquote?apikey=beta`)
+teks = `_${anu.result.quotes}_\n\n• *${anu.result.author}*`
+mans.sendMessage(from, teks, text, { quoted: mek })
+break
+case 'meme':
+reply(`wait loading`)
+anu = await fetchJson(`https://rest-api-megumin1.herokuapp.com/api/random/meme?apikey=beta`)
+buffer = await getBuffer(anu.result.url)
+mans.sendMessage(from, buffer, image, { quotes: mek })
+break
+case 'battle-field':
+reply(`wait loading`)
+kontolq = body.slice(14)
+memekwlo = kontolq.split("|")[0];
+memekwlo1 = kontolq.split("|")[1];
+anu = await fetchJson(`https://rest-api-megumin1.herokuapp.com/api/textmaker/game?text=${memekwlo}&text2=${memekwlo1}&theme=battlefield&apikey=beta`)
+buffer = await getBuffer(anu.result.url)
+xaxaaa = `${anu.result.url}\n${anu.result.info}`
+mans.sendMessage(from, buffer, image, {quoted: mek, caption: xaxaaa})
+break
+case 'metal':
+reply(`wait loading`)
+anu = await fetchJson(`https://rest-api-megumin1.herokuapp.com/api/textmaker/metallic?text=${body.slice(7)}&theme=glow&apikey=beta`)
+buffer = await getBuffer(anu.result.url)
+xaxaaaa = `${anu.result.url}\n${anu.result.info}`
+mans.sendMessage(from, buffer, image, {quoted: mek, caption: xaxaaaa})
+break
+case 'coffee-cup2':
+reply(`wait loading`)
+anu = await fetchJson(`https://rest-api-megumin1.herokuapp.com/api/textmaker/senja?text=${body.slice(13)}&theme=coffee-cup2&apikey=beta`)
+buffer = await getBuffer(anu.result.url)
+xaxaaa = `${anu.result.url}\n${anu.result.info}`
+mans.sendMessage(from, buffer, image, {quoted: mek, caption: xaxaaa})
+break
+case 'bunga':
+reply(`wait loading`)
+anu = await fetchJson(`https://rest-api-megumin1.herokuapp.com/api/textmaker/alam?text=${body.slice(7)}&theme=flower&apikey=beta`)
+buffer = await getBuffer(anu.result.url)
+xaxaa = `${anu.result.url}\n${anu.result.info}`
+mans.sendMessage(from, buffer, image, {quoted: mek, caption: xaxaa})
+break
+case 'woodheart':
+reply(`wait loading`)
+anu = await fetchJson(`https://rest-api-megumin1.herokuapp.com/api/textmaker/random?text=${body.slice(11)}&theme=art-quote&apikey=Alphabot`)
+buffer = await getBuffer(anu.result.url)
+xaxa = `${anu.result.url}\n${anu.result.info}`
+mans.sendMessage(from, buffer, image, {quoted: mek, caption: xaxa})
+break
+case 'google':
+reply(`wait loading`)
+kontol = body.slice(8)
+memek3 = kontol.split("|")[0];
+memek4 = kontol.split("|")[1];
+memek5 = kontol.split("|")[2];
+anu = await fetchJson(`https://rest-api-megumin1.herokuapp.com/api/textmaker?text=${memek3}&text2=${memek4}&text3=${memek5}&theme=google-suggestion&apikey=beta`)
+buffer = await getBuffer(anu.result.url)
+buffer1 = await getBuffer(anu.result.delete_url)
+shit = `${anu.result.url}\n${anu.result.info}`
+mans.sendMessage(from, buffer, image, {quoted: mek, caption: shit})
+case 'kisahnabi':
+reply(`wait loading`)
+if (args.length == 0) return reply(`Example: ${prefix + command} Muhammad`)
+anu = await fetchJson(`https://rest-api-megumin1.herokuapp.com/api/kisahnabi?nabi=${body.slice(11)}&apikey=beta`)
+teks = `Nama : ${anu.result.nabi.nabi}\nLahir : ${anu.result.nabi.lahir}\nUmur : ${anu.result.nabi.umur}\nTempat : ${anu.result.nabi.tempat}\nKisah : ${anu.result.nabi.kisah}`
+mans.sendMessage(from, teks, text, {quoted: mek})
+break
+case 'manga': // Update NEW FITUR 
+reply(`wait loading`)
+                if (args.length < 1) return reply('nama anime nya apaang bwang?')
+                reply('[❕]loading')
+                anu = await fetchJson(`https://rest-api-megumin1.herokuapp.com/api/manga?search=${body.slice(9)}&apikey=beta`)
+                buffer = await getBuffer(anu.result.thumb)
+                hasil = `*note:* ${anu.result.note}\n*Title:* : ${anu.result.title}\n*Genre* : ${anu.result.genre}\n*Type* : ${anu.result.type}\n*Rating* : ${anu.result.rating}\n*Desk* : ${anu.result.description}\n*Released On* : ${anu.result.released}\n*status:* ${anu.result.status}`
+                mans.sendMessage(from, buffer, image, { quoted: mek, caption: hasil })
+                break
+                case 'manga1':
+                reply(`wait loading`)
+if (args.length < 1) return reply(`mau nyari anime apa um?`)
+query = args.join(" ")
+anu = await fetchJson(`https://rest-api-megumin1.herokuapp.com/api/manga?search=${query}&apikey=beta`)
+memeklah = `note: ${anu.result.note}\ntitle: ${anu.result.title}\ngenre: ${anu.result.genre}\ntype: ${anu.result.type}\nauthor: ${anu.result.author}\nstatus: ${anu.result.status}\nscore: ${anu.result.rating}\nrealis: ${anu.result.released}\nlink: ${anu.result.link}\ndesc: ${anu.result.description}\n`
+buffer = await getBuffer(`https://i.postimg.cc/hvHsThsH/images-17.jpg`)
+mans.sendMessage(from, buffer, image, {quoted: mek, caption: memeklah})
+break
+case 'manga2': // Update NEW FITUR 
+reply(`wait loading`)
+                if (args.length < 1) return reply('nama anime nya apaang bwang?')
+                reply('[❕]loading')
+                anu = await fetchJson(`https://rest-api-megumin1.herokuapp.com/api/manga?search=${body.slice(8)}&apikey=beta`)
+                teks = `*Title:* : ${anu.result.title}\n*Desk* : ${anu.result.description}\n*Genre* : ${anu.result.description.genre}\n*Type* : ${anu.result.description.type}\n*Rating* : ${anu.result.description.rating}\n*Released* : ${anu.result.description.released}\n*status:* ${anu.result.description.status}`
+                mans.sendMessage(from, teks, text, { quoted: mek})
+                break
+                case 'manga3':
+                reply(`wait loading`)
+if (args.length < 1) return reply(`mau nyari anime apa um?`)
+query = args.join(" ")
+anu = await fetchJson(`https://rest-api-megumin1.herokuapp.com/api/manga?search=${body.slice(8)}&apikey=beta`)
+txt = `title: ${anu.result.title}\n`
+txt += `genre: ${anu.result.genre}\n`
+txt += `type: ${anu.result.type}\n`
+txt += `author: ${anu.result.author}\n`
+txt += `status: ${anu.result.status}\n`
+txt += `score: ${anu.result.rating}\n`
+txt += `realis: ${anu.result.released}\n`
+txt += `desc: ${anu.result.description}\n`
+txt += `============`
+kontol = anu.link
+for (var i in kontol) {
+txt += `\nlink download: ${i.link}\n`
+for (var y in kontol[i.link]) {
+txt += `${y.link} - ${kontol[x.link][y.link]}`
+}
+}
+buffer = await getBuffer(`https://i.postimg.cc/hvHsThsH/images-17.jpg`)
+mans.sendMessage(from, buffer, image, {quoted: mek, caption: txt})
+break
+case 'tiktok':
+  if (args.length < 1) return reply('Link nya mana')
+  reply(Loading)
+  anu = await fetchJson(`https://yotsuchan.herokuapp.com/api/download/tiktok?url=${args[0]}&apikey=Ninochan`)
+  teks = `• *Judul*: ${anu.judul}`
+  mans.sendMessage(from, teks, video, { quoted: mek})
+  break
+case 'joox':
+ if (args.length < 1) return reply('Lagunya apa')
+ reply(`Loading`)
+ anu = await fetchJson(`https://yotsuchan.herokuapp.com/api/music/joox?apikey=Ninochan&query=${args[0]}`)
+ teks = `Lagu Ditemukan!!\n\n• *Judul*: ${anu.result.lagu}\n• *Album*: ${anu.result.album}\n• *Penyanyi*: ${anu.result.penyanyi}\n• *Publish*: ${anu.result.publish}`
+ thumbnail = await getBuffer(anu.result.img)
+ mans.sendMessage(from, thumbnail, image, { quoted: mek, caption: teks })
+ get_audio = `${anu.result.lirik}`
+ mans.sendMessage(from, get_audio, text, {quoted: mek})
+    break
+case 'manga4':
+                if (args.length < 1) return reply(`username nya mana um?`)
+               reply(`wait loading`)
+                     anu  = await fetchJson(`https://rest-api-megumin1.herokuapp.com/api/manga?search=${body.slice(8)}&apikey=beta`)
+buffer = await getBuffer(`https://i.postimg.cc/hvHsThsH/images-17.jpg`)
+teks = `==================\n`
+teks += `•> *Title:* : ${anu.result.title}\nlink: https://drive.google.com${anu.result.link}\n*Genre* : ${anu.result.genre}\n*Type* : ${anu.result.type}\n*Rating* : ${anu.result.rating}\n*Released* : ${anu.result.released}\n*status:* ${anu.result.status}\n*Desk* : ${anu.result.description}`
+reply(teks.trim())
+break
+case 'manga5': // Errorr
+                if (args.length < 1) return reply(`mau nyari apaan bwang di joox?`)
+                reply(`[❕] Loading`)
+                anu = await fetchJson(`c`)
+                teks = '=================\n'
+                resa = anu.result.result
+                for (let i of resa) {
+                    teks += `•> *Title:* : ${i.title}\nlink: https://drive.google.com${i.link}\n*Genre* : ${i.genre}\n*Type* : ${i.type}\n*Rating* : ${i.rating}\n*Released* : ${i.released}\n*status:* ${i.status}\n*Desk* : ${i.description}\n=================\n`
+                }
+                reply(teks)
+                break
+                case 'tahlil': // Update NEW FITUR 
+                reply(`[❕] Loading`)
+                anu = await fetchJson(`https://rest-api-megumin1.herokuapp.com/api/muslim/tahlil?apikey=beta`)
+                lah = `•> *Title:* : ${anu.result.title}\n=================\n`
+                mans.sendMessage(from, lah, text, {quoted: mek})
+                break
+                case 'tahlil1': // Update NEW FITUR 
+                if (args.length < 1) return reply(`mau nyari apaan bwang di joox?`)
+                reply(`[❕] Loading`)
+                asu = await fetchJson(`https://rest-api-megumin1.herokuapp.com/api/muslim/tahlil?apikey=beta`)
+                teks = '=================\n'
+                resa = asu.result.result
+                for (let i of resa) {
+                    teks += `•> *Title:* : ${i.title}\nlink: https://drive.google.com${i.link}\n*Genre* : ${i.genre}\n*Type* : ${i.type}\n*Rating* : ${i.rating}\n*Released* : ${i.released}\n*status:* ${i.status}\n*Desk* : ${i.description}\n=================\n`
+                }
+                reply(teks)
+                break
+case 'infogempa':
+anu = await fetchJson(`https://rest-api-megumin1.herokuapp.com/api/infogempa?apikey=beta`)
+teks = `waktu: ${anu.result.Waktu}\nlintang: ${anu.result.Lintang}\nbujur: ${anu.result.Bujur}\nmagnitudo: ${anu.result.Magnitudo}\nkedalaman: ${anu.result.Kedalaman}\nwilayah: ${anu.result.Wilayah}`
+mans.sendMessage(from, teks, text, {quoted: mek})
+break
+case 'leave':
+if (!isOwner && !mek.key.fromMe) return reply('lo sapa bro?bukan owner mingir kontol')
+if (!mek.key.fromMe) return
+setTimeout( () => {
+mans.groupLeave(from) 
+}, 6000)
+setTimeout( () => {
+faketoko('Byee...')
+}, 6000)
+setTimeout( () => {
+faketoko('1')
+}, 5000)
+setTimeout( () => {
+faketoko('2')
+}, 1000)
+setTimeout( () => {
+faketoko('3')
+}, 0)
+break
 case 'wame':
           mans.updatePresence(from, Presence.composing)
           options = {
@@ -1372,6 +1709,67 @@ case 'wame':
             mans.sendMessage(from, options, text, {quoted: mek})
            mans.sendMessage(from, text1, text, {quoted: mek})
            break
+case 'caklontong':
+   anu = await fetchJson(`https://rest-api-megumin1.herokuapp.com/api/kuis/caklontong?apikey=beta`)
+   cak = `*${anu.result.soal}*`
+   setTimeout( () => {
+   reply('*➸ Jawaban :* '+anu.result.jawaban, text, {quoted: mek}) // ur cods
+   }, 30000) // 1000 = 1s,
+   setTimeout( () => {
+   reply('_10 Detik lagi…_', text) // ur cods
+   }, 20000) // 1000 = 1s,
+   setTimeout( () => {
+   reply('_20 Detik lagi_…', text) // ur cods
+   }, 10000) // 1000 = 1s,
+   setTimeout( () => {
+   reply('_30 Detik lagi_…', text) // ur cods
+   }, 2500) // 1000 = 1s,
+   setTimeout( () => {
+   mans.sendMessage(from, cak, text, {quoted: mek }) // ur cods
+   }, 0) // 1000 = 1s,
+   break
+   case 'tebakgambar':
+   anu = await fetchJson(`https://rest-api-megumin1.herokuapp.com/api/kuis/tebakgambar?apikey=beta`)
+   gambar = await getBuffer(anu.result.images)
+   setTimeout( () => {
+   reply('*➸ Jawaban :* '+anu.result.jawaban, text, {quoted: mek}) // ur cods
+   }, 30000) // 1000 = 1s,
+   setTimeout( () => {
+   reply('_10 Detik lagi…_', text) // ur cods
+   }, 20000) // 1000 = 1s,
+   setTimeout( () => {
+   reply('_20 Detik lagi_…', text) // ur cods
+   }, 10000) // 1000 = 1s,
+   setTimeout( () => {
+   reply('_30 Detik lagi_…', text) // ur cods
+   }, 2500) // 1000 = 1s,
+   setTimeout( () => {
+   mans.sendMessage(from, gambar, image, {quoted: mek }) // ur cods
+   }, 0) // 1000 = 1s,
+   break
+     case 'pubglogo':
+     ct = body.slice(9)
+     memek1 = ct.split("|")[0];
+     memek2 = ct.split("|")[1];
+     reply(`loading tot`)
+     anu = await fetchJson(`https://rest-api-megumin1.herokuapp.com/api/textmaker/game?text=${memek1}&text2=${memek2}&theme=pubg&apikey=beta`)
+     buffer = await getBuffer(anu.result.url)
+     mans.sendMessage(from, buffer, image, {quoted: mek, caption: 'nih kack'})
+     break
+     case 'owner':
+     reply(`wa.me/6285691724140\nhttps://wa.me/6285691724140`)
+     break
+case 'lirik':
+if (!q) return reply(mess.wrongFormat)
+reply(mess.wait)
+lirikLagu(q).then((res) => {
+let lirik = `Lirik Lagu ${q}
+
+${res[0].result}
+`
+reply(lirik)
+})
+break
 case 'donasi':
 lelet = `hai mau donasi?bisa tf melalui gopay,dana,pulsa silahkan lihat di bawah\ngopay: 085691724140\ndana: 085691724140\npulsa: 085691724140`
 mans.sendMessage(from, lelet, text, {quoted: mek, caption: lelet})
@@ -1389,19 +1787,19 @@ break
                 }
                 
                 if (budy.includes(`@menu`)) {
-                    const bot = fs.readFileSync('./assets/bot.mp3');
+                    const bot = fs.readFileSync('./assets/bot');
                     mans.sendMessage(from, bot, MessageType.audio, { quoted: mek, mimetype: 'audio/mp4', ptt: true })
                 }
                 if (budy.includes(`!menu`)) {
-                    const bot = fs.readFileSync('./assets/bot.mp3');
+                    const bot = fs.readFileSync('./assets/bot');
                     mans.sendMessage(from, bot, MessageType.audio, { quoted: mek, mimetype: 'audio/mp4', ptt: true })
                 }
                 if (budy.includes(`/menu`)) {
-                    const bot = fs.readFileSync('./assets/bot.mp3');
+                    const bot = fs.readFileSync('./assets/bot');
                     mans.sendMessage(from, bot, MessageType.audio, { quoted: mek, mimetype: 'audio/mp4', ptt: true })
                 }
                 if (budy.includes(`.menu`)) {
-                    const bot = fs.readFileSync('./assets/bot.mp3');
+                    const bot = fs.readFileSync('./assets/bot');
                     mans.sendMessage(from, bot, MessageType.audio, { quoted: mek, mimetype: 'audio/mp4', ptt: true })
                 }
                 if (body.startsWith(`${prefix}${command}`)) {
